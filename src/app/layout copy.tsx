@@ -1,15 +1,6 @@
-// app/layout.tsx
-
-// A sintaxe da primeira linha é muito sensível
-import type { Metadata } from "next"; 
-
-// Certifique-se de que há vírgula entre Geist e Geist_Mono, e a palavra 'from'
-import { Geist, Geist_Mono } from "next/font/google"; 
-
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-// O erro 1005 estava quase certamente entre a linha 1 e 3.
-// O restante do código deve estar correto:
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rodney Rinaldi | Advogado",
-  description: "Rodney Rinaldi Advogado Especialista em Tecnologia e Negócios.",
+  title: "Rodney Rinaldi",
+  description: "Rodney Rinaldi Advogado",
 };
 
 export default function RootLayout({
@@ -32,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

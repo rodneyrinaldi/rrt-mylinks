@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Modo Claro (Light Mode) */
+  --background: #f4f4f4; /* Cinza muito claro, menos agressivo que branco puro */
+  --foreground: #1c1c1c; /* Cinza quase preto, para o texto */
+  --highlight: #d97706; /* Âmbar 600 - Cor de destaque para o advogado */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Modo Escuro (Dark Mode) Profissional */
+    --background: #0a0a0a; /* Preto absoluto/muito escuro */
+    --foreground: #f0f0f0; /* Branco suave para o texto */
+    --highlight: #fbbf24; /* Âmbar 400 - Cor de destaque para o advogado */
+  }
+}
+
+body {
+  /* Usa as variáveis de cor definidas */
+  color: var(--foreground);
+  background: var(--background);
+  
+  /* ATUALIZAÇÃO 1: Usa a fonte Geist configurada no RootLayout.tsx */
+  /* Remove Arial/Helvetica e usa as variáveis do Next.js/Geist */
+  font-family: var(--font-geist-sans), sans-serif;
+  
+  /* Efeito de suavização de fonte */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ATUALIZAÇÃO 2: Estilos de Componente Personalizado (Classe link-button) */
+/* Implementa a animação moderna de levantamento para os botões do Linktree */
+@layer components {
+    .link-button {
+        /* Layout e Aparência Base */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 1rem; 
+        border-radius: 0.75rem; /* Bordas arredondadas */
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        
+        /* Transição suave para os efeitos hover */
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        
+        /* Garante que o texto dentro não quebre */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Efeito de Levantamento e Sombra Aumentada no Hover */
+    .link-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    }
+}
