@@ -5,7 +5,7 @@ import { FaLinkedin, FaFacebook, FaInstagram, FaEnvelope, FaGavel, FaCode } from
 export default function Home() {
   return (
     // Fundo da página com gradiente definido no globals.css
-    <div className="min-h-screen flex items-center justify-center p-4 text-white font-sans"> 
+    <div className="min-h-screen flex items-start justify-center p-4 text-white font-sans bg-orange-50"> 
       
       {/* Cartão Central (Container) com Imagem de Fundo como Next/Image */}
       <div 
@@ -78,7 +78,7 @@ export default function Home() {
             
             <Link 
               href="mailto:r2enviar@gmail.com" 
-              className="link-button border border-gray-600 bg-gray-700 hover:bg-gray-600 text-white font-medium border border-white/30"
+              className="link-button border-1 border-gray-600 bg-gray-700 hover:bg-gray-600 text-white font-medium border border-white/30"
               target="_blank"
               rel="noopener noreferrer"
             >
